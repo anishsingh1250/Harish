@@ -1,0 +1,198 @@
+{
+  "header-section": [
+    {
+      "field": "company_info",
+      "name": "Company Information",
+      "explanation": "Friends Star Transport company details",
+      "position": "top-right",
+      "fieldType": "manual",
+      "customValue": "TRN# 100040182600003\nFriends Star Transport L.L.C.\nOffice no. S 18, Building I 15, Morocco Cluster\nInternational City\nDubai 78562\nUnited Arab Emirates\n\nPhone: 043337313\nFax: 043337314\nMobile: 0558526260, 0565110023\nwww.friendsstartransport.com"
+    }
+  ],
+  "client-section": [
+    {
+      "field": "client",
+      "name": "Client Name",
+      "explanation": "Customer name from Excel spreadsheet",
+      "position": "left-side",
+      "fieldType": "excel",
+      "column": "B"
+    },
+    {
+      "field": "client_trn",
+      "name": "Client TRN",
+      "explanation": "Default client TRN number",
+      "position": "left-side",
+      "fieldType": "manual",
+      "customValue": "TRN# 100252885700003"
+    }
+  ],
+  "invoice-section": [
+    {
+      "field": "invoice_number",
+      "name": "Invoice Number",
+      "explanation": "Auto-generated invoice number",
+      "position": "top-right",
+      "fieldType": "auto",
+      "autoType": "invoice_number"
+    },
+    {
+      "field": "po_number",
+      "name": "P.O./S.O. Number",
+      "explanation": "Purchase order number",
+      "position": "top-right",
+      "fieldType": "manual",
+      "customValue": "Job:# 02544"
+    },
+    {
+      "field": "invoice_date",
+      "name": "Invoice Date",
+      "explanation": "Current date auto-generated",
+      "position": "top-right",
+      "fieldType": "auto",
+      "autoType": "current_date"
+    },
+    {
+      "field": "due_date",
+      "name": "Payment Due",
+      "explanation": "Due date 30 days from invoice date",
+      "position": "top-right",
+      "fieldType": "auto",
+      "autoType": "due_date"
+    }
+  ],
+  "transport-section": [
+    {
+      "field": "container",
+      "name": "Container",
+      "explanation": "Container information from Excel",
+      "position": "table-row",
+      "fieldType": "excel",
+      "column": "C"
+    },
+    {
+      "field": "from",
+      "name": "From Location",
+      "explanation": "Departure location from Excel",
+      "position": "table-row",
+      "fieldType": "excel",
+      "column": "D"
+    },
+    {
+      "field": "to",
+      "name": "To Location",
+      "explanation": "Destination location from Excel",
+      "position": "table-row",
+      "fieldType": "excel",
+      "column": "E"
+    }
+  ],
+  "items-section": [
+    {
+      "field": "date",
+      "name": "Service Date",
+      "explanation": "Service date from Excel",
+      "position": "table-row",
+      "fieldType": "excel",
+      "column": "A"
+    },
+    {
+      "field": "transportation_desc",
+      "name": "Transportation",
+      "explanation": "Transportation service description",
+      "position": "table-row",
+      "fieldType": "manual",
+      "customValue": "Transportation"
+    },
+    {
+      "field": "quantity",
+      "name": "Quantity",
+      "explanation": "Quantity from Excel",
+      "position": "table-row",
+      "fieldType": "excel",
+      "column": "G"
+    },
+    {
+      "field": "rate",
+      "name": "Price",
+      "explanation": "Rate per unit from Excel",
+      "position": "table-row",
+      "fieldType": "excel",
+      "column": "F"
+    },
+    {
+      "field": "token",
+      "name": "Token",
+      "explanation": "Token information from Excel",
+      "position": "table-row",
+      "fieldType": "excel",
+      "column": "H"
+    },
+    {
+      "field": "vdm",
+      "name": "VGM",
+      "explanation": "VDM/VGM information from Excel",
+      "position": "table-row",
+      "fieldType": "excel",
+      "column": "I"
+    },
+    {
+      "field": "token_vgm_desc",
+      "name": "Token and VGM Service",
+      "explanation": "Token and VGM service description",
+      "position": "table-row",
+      "fieldType": "manual",
+      "customValue": "Token and VGM"
+    },
+    {
+      "field": "washing_due",
+      "name": "Washing Due",
+      "explanation": "Washing charges from Excel",
+      "position": "table-row",
+      "fieldType": "excel",
+      "column": "K"
+    },
+    {
+      "field": "other_charges",
+      "name": "Other Charges",
+      "explanation": "Other charges from Excel",
+      "position": "table-row",
+      "fieldType": "excel",
+      "column": "L"
+    }
+  ],
+  "total-section": [
+    {
+      "field": "subtotal",
+      "name": "Subtotal",
+      "explanation": "Calculated subtotal before VAT",
+      "position": "bottom-right",
+      "fieldType": "auto",
+      "autoType": "calculated_subtotal"
+    },
+    {
+      "field": "vat",
+      "name": "VAT 5%",
+      "explanation": "5% VAT on subtotal",
+      "position": "bottom-right",
+      "fieldType": "auto",
+      "autoType": "calculated_vat"
+    },
+    {
+      "field": "total",
+      "name": "Total",
+      "explanation": "Final total from Excel",
+      "position": "bottom-right",
+      "fieldType": "excel",
+      "column": "M"
+    },
+    {
+      "field": "amount_due",
+      "name": "Amount Due (AED)",
+      "explanation": "Amount due matching total",
+      "position": "bottom-right",
+      "fieldType": "excel",
+      "column": "M"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "transport-erp-nextjs",
+  "version": "1.0.0",
+  "description": "Transport ERP System built with Next.js and Supabase",
+  "scripts": {
+    "dev": "next dev --port 5000 --hostname 0.0.0.0",
+    "build": "next build",
+    "start": "next start --port 5000 --hostname 0.0.0.0",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@supabase/auth-helpers-nextjs": "^0.10.0",
+    "@supabase/supabase-js": "^2.54.0",
+    "@tailwindcss/postcss": "^4.1.11",
+    "@types/node": "^24.2.1",
+    "@types/react": "^19.1.9",
+    "autoprefixer": "^10.4.21",
+    "next": "^15.4.6",
+    "postcss": "^8.5.6",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "15.4.6"
+  }
+}
