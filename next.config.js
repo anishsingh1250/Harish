@@ -1,8 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    serverComponentsExternalPackages: ['@supabase/supabase-js']
-  },
+  serverExternalPackages: ['@supabase/supabase-js'],
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     // Add fallbacks for Node.js modules
     if (!isServer) {

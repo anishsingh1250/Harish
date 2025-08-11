@@ -3,11 +3,12 @@
 import { useState, useEffect } from 'react'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import { useRouter } from 'next/navigation'
+import { User } from '@supabase/supabase-js'
 import ExcelSpreadsheet from '@/components/ExcelSpreadsheet'
 import InvoiceGenerator from '@/components/InvoiceGenerator'
 
 export default function Operations() {
-  const [user, setUser] = useState<any>(null)
+  const [user, setUser] = useState<User | null>(null)
   const [loading, setLoading] = useState(true)
   const [activeView, setActiveView] = useState('dashboard')
   const [excelData, setExcelData] = useState<string[][]>([])

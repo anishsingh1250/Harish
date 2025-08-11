@@ -4,8 +4,9 @@ import { join } from 'path'
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { templateName: string } }
+  context: { params: Promise<{ templateName: string }> }
 ) {
+  const params = await context.params
   try {
     const templateName = params.templateName
     
