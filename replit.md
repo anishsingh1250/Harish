@@ -13,7 +13,7 @@ Preferred communication style: Simple, everyday language.
 ### August 11, 2025 - Complete Next.js Migration with Excel & Invoice Functionality (CURRENT STATE)
 - **COMPREHENSIVE NEXT.JS CONVERSION:** Successfully migrated Flask Transport ERP to modern Next.js architecture
 - **PRESERVED CORE FUNCTIONALITY:** Maintained all Excel spreadsheet features and PDF invoice generation
-- **ADVANCED COMPONENTS:** Created ExcelSpreadsheet and InvoiceGenerator React components
+- **ADVANCED COMPONENTS:** Created ExcelSpreadsheet and InvoiceGenerator React components in proper `/components` directory
 - **SUPABASE INTEGRATION:** Complete database schema with Row Level Security policies
 - **PDF GENERATION:** Converted ReportLab functionality to browser-based PDF generation
 - **TEMPLATE SYSTEM:** Preserved Friends Star Transport template configuration
@@ -21,6 +21,8 @@ Preferred communication style: Simple, everyday language.
 - **TYPE SAFETY:** Full TypeScript implementation with proper type definitions
 - **RESPONSIVE UI:** Dark theme with Tailwind CSS for all screen sizes
 - **API ROUTES:** Next.js API routes for template configuration and data processing
+- **PROJECT CLEANUP:** Removed all Python files (main.py, pyproject.toml, uv.lock, __pycache__) - no longer needed
+- **PROPER STRUCTURE:** Components correctly organized in `/components` folder for Next.js standards
 
 ### August 9, 2025 - GitHub Repository Setup (PREVIOUS STATE)
 - **REPOSITORY PREPARED:** All code files and documentation prepared for GitHub push
