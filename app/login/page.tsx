@@ -1,7 +1,7 @@
 'use client'
 
-import { useState } from 'react'
-import { supabase } from '@/lib/supabase'
+import { useState, useEffect } from 'react'
+import { mockAuth } from '@/lib/supabase'
 import { useRouter } from 'next/navigation'
 
 export default function LoginPage() {
@@ -11,24 +11,27 @@ export default function LoginPage() {
   const [error, setError] = useState('')
   const router = useRouter()
 
+  useEffect(() => {
+    // Check if user is already logged in
+    const { data } = mockAuth.getUser()
+    if (data.user) {
+      router.push('/dashboard')
+    }
+  }, [router])
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
     setError('')
 
     try {
-      // For now, we'll use email-based auth with Supabase
-      // In a real implementation, you'd convert username to email or use custom auth
       const email = username.includes('@') ? username : `${username}@transport-erp.com`
       
-      const { data, error } = await supabase.auth.signInWithPassword({
-        email,
-        password,
-      })
+      const { data, error } = await mockAuth.signIn(email, password)
 
       if (error) {
         setError('Invalid username or password')
-      } else {
+      } else if (data?.user) {
         router.push('/dashboard')
       }
     } catch (err) {

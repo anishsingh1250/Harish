@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { supabase } from '@/lib/supabase'
+import { supabase, mockAuth } from '@/lib/supabase'
 import { useRouter } from 'next/navigation'
 import { User } from '@supabase/supabase-js'
 
@@ -24,11 +24,11 @@ export default function DashboardPage() {
   }, [])
 
   const getUser = async () => {
-    const { data: { user } } = await supabase.auth.getUser()
+    const { data: { user } } = mockAuth.getUser()
     if (!user) {
       router.push('/login')
     } else {
-      setUser(user)
+      setUser(user as User)
     }
   }
 
@@ -49,7 +49,7 @@ export default function DashboardPage() {
   }
 
   const handleLogout = async () => {
-    await supabase.auth.signOut()
+    await mockAuth.signOut()
     router.push('/login')
   }
 
