@@ -1,13 +1,1 @@
-{
-  "/_not-found/page": "app/_not-found/page.js",
-  "/api/templates/[templateName]/route": "app/api/templates/[templateName]/route.js",
-  "/admin/page": "app/admin/page.js",
-  "/dashboard/page": "app/dashboard/page.js",
-  "/finance/page": "app/finance/page.js",
-  "/login/page": "app/login/page.js",
-  "/management/page": "app/management/page.js",
-  "/masters/page": "app/masters/page.js",
-  "/operations/page": "app/operations/page.js",
-  "/page": "app/page.js",
-  "/reports/page": "app/reports/page.js"
-}
+{}
