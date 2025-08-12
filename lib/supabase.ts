@@ -31,49 +31,42 @@ export const supabaseAdmin = createClient<Database>(
   }
 )
 
-// Mock authentication service for development
+// Mock authentication system for development
 export const mockAuth = {
+  getUser: () => {
+    if (typeof window === 'undefined') return { data: { user: null } }
+    const user = localStorage.getItem('mock_user')
+    return {
+      data: {
+        user: user ? JSON.parse(user) : null
+      }
+    }
+  },
+
   signIn: async (email: string, password: string) => {
-    // Demo credentials
-    if (email === 'superadmin@transport-erp.com' && password === 'superadmin123') {
+    // Demo credentials validation
+    if ((email === 'superadmin@transport-erp.com' || email === 'superadmin') && password === 'superadmin123') {
       const mockUser = {
         id: '1',
         email: 'superadmin@transport-erp.com',
-        user_metadata: { 
-          name: 'Super Admin',
-          role: 'super_admin' 
-        },
-        created_at: new Date().toISOString(),
-        updated_at: new Date().toISOString(),
-        aud: 'authenticated',
-        role: 'authenticated'
+        user_metadata: {
+          first_name: 'Super',
+          last_name: 'Admin',
+          role: 'super_admin'
+        }
       }
-      
-      // Store in localStorage for demo
       if (typeof window !== 'undefined') {
-        localStorage.setItem('demo-user', JSON.stringify(mockUser))
+        localStorage.setItem('mock_user', JSON.stringify(mockUser))
       }
-      
       return { data: { user: mockUser }, error: null }
     }
-    
-    return { data: null, error: new Error('Invalid credentials') }
+    return { data: { user: null }, error: 'Invalid credentials' }
   },
-  
+
   signOut: async () => {
     if (typeof window !== 'undefined') {
-      localStorage.removeItem('demo-user')
+      localStorage.removeItem('mock_user')
     }
     return { error: null }
-  },
-  
-  getUser: () => {
-    if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem('demo-user')
-      if (stored) {
-        return { data: { user: JSON.parse(stored) }, error: null }
-      }
-    }
-    return { data: { user: null }, error: null }
   }
 }
