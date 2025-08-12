@@ -1,8 +1,13 @@
 import { createClient } from '@supabase/supabase-js'
 import { Database } from '@/types/database'
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'http://localhost:54321'
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxvY2FsaG9zdCIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNjc3ODQ5MjAwLCJleHAiOjE5OTMyMDkyMDB9.QY8NdRPHlRPHblSWAzKb1N5VfNXsfrI9DQPvjGhpgWA'
+// For demo mode, use valid defaults when environment variables are misconfigured
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL?.startsWith('http') 
+  ? process.env.NEXT_PUBLIC_SUPABASE_URL 
+  : 'https://demo.supabase.co'
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY?.startsWith('eyJ') 
+  ? process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY 
+  : 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxvY2FsaG9zdCIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNjc3ODQ5MjAwLCJleHAiOjE5OTMyMDkyMDB9.QY8NdRPHlRPHblSWAzKb1N5VfNXsfrI9DQPvjGhpgWA'
 
 // Mock authentication for development
 export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey, {
