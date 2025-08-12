@@ -2,9 +2,9 @@ import { createClient } from '@supabase/supabase-js'
 import { Database } from '@/types/database'
 
 // Environment variables with fallbacks for demo mode
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://demo.supabase.co'
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRlbW8iLCJyb2xlIjoiYW5vbiIsImlhdCI6MTY3Nzg0OTIwMCwiZXhwIjoxOTkzMjA5MjAwfQ.demo_key_for_development'
-
+const supabaseUrl = https://phhtfjconrhlgrylqwgj.supabase.co
+const supabaseAnonKey = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBoaHRmamNvbnJobGdyeWxxd2dqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ4MzQ2MDYsImV4cCI6MjA3MDQxMDYwNn0.7PUvPkj0FYYvH3bhJzE_EhkHT53PzEFRTagTMSF2sQY
+ 
 // Create the supabase client
 export const supabaseClient = createClient<Database>(supabaseUrl, supabaseAnonKey, {
   auth: {
@@ -18,7 +18,8 @@ export const supabaseClient = createClient<Database>(supabaseUrl, supabaseAnonKe
 export default supabaseClient
 
 // Server-side admin client
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRlbW8iLCJyb2xlIjoic2VydmljZV9yb2xlIiwiaWF0IjoxNjc3ODQ5MjAwLCJleHAiOjE5OTMyMDkyMDB9.demo_service_key_for_development'
+const supabaseServiceKey = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBoaHRmamNvbnJobGdyeWxxd2dqIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1NDgzNDYwNiwiZXhwIjoyMDcwNDEwNjA2fQ.qjjjCMaDdRPI8qUkSGsW9Te0QniC0w9S2iT--uOn4yA
+
 
 export const supabaseAdmin = createClient<Database>(
   supabaseUrl,
