@@ -18,9 +18,11 @@ export const supabaseClient = createClient<Database>(supabaseUrl, supabaseAnonKe
 export default supabaseClient
 
 // Server-side admin client
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRlbW8iLCJyb2xlIjoic2VydmljZV9yb2xlIiwiaWF0IjoxNjc3ODQ5MjAwLCJleHAiOjE5OTMyMDkyMDB9.demo_service_key_for_development'
+
 export const supabaseAdmin = createClient<Database>(
   supabaseUrl,
-  process.env.SUPABASE_SERVICE_ROLE_KEY || 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRlbW8iLCJyb2xlIjoic2VydmljZV9yb2xlIiwiaWF0IjoxNjc3ODQ5MjAwLCJleHAiOjE5OTMyMDkyMDB9.demo_service_key_for_development',
+  supabaseServiceKey,
   {
     auth: {
       autoRefreshToken: false,
